@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+body{
+  background-image: url("./img/papeldeparede.jpg") ;
+  background-size: 100%;
+  
+}
+
+.tudo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* header */
+
+header{
+  width: 100%;
+  height: 200px;
+  color: white;
+}
+
+.header{
+  width: 70%;
+  margin-right: 50px;
+  margin-right: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header img{
+  width: 180px;
+  border-radius: 100%;
+}
+
+.dadosBuscados{
+  width: 45%;
+}
+
+.header input{
+  width: 190px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding-left: 10px;
+}
+
+.header button{
+  margin-top: 15px;
+  width: 202px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #17d7d1;
+}
+
+.inputs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.h1{
+  width: 55%;
+  font-family: 'Montserrat';
+  font-size: 25px;
+  text-transform: uppercase;
+  margin-right: 20px;
+  font-size: 20px;
+  text-shadow: 0.3em 0.2em 0.2em rgb(32, 32, 32);
+}
+
+.dja{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.informacoes{
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 0.3em 0.2em 0.2em rgb(32, 32, 32);
+  display: flex;
+  justify-content: space-around;
+}
+
+/* repositorios */
+
+.repositorios{
+  width: 400px;
+  height: 100%;
+  background-image: linear-gradient(to bottom right , rgb(8, 92, 67), #17d7d1);
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  border-radius: 10px;
+  margin: 15px;
+}
+
+.repositorios:hover{
+  transition: 0.7s;
+  transform: scale(1.04)
+}
+
+.repositorios h1 {
+  font-size: 15px;
+}
+
+.repositorios h2{
+  font-size: 15px;
+}
+
+.identificacao{
+  width: 90%;
+  height: 100%;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* background-color: blueviolet; */
+}
+
+.descricao{
+  width: 90%;
+  max-height: 100px;
+  /* background-color: rgb(65, 65, 3); */
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 20px;
+}
+
+.containerRepositorios{
+  width: 1300px;
+  height: 100%;
+  /* background-color: violet; */
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Arial, Helvetica, sans-serif;
+}
