@@ -67,9 +67,15 @@ body{
     border-radius: 6px;
     border: none;
     outline: 0;
-    font-size: 25px;
+    font-size: 15px;
     color: #fff;
+    font-family: 'Montserrat';
     background-color: #A94BEF;
+}
+
+.botao{
+    width: 290px;
+    justify-content: space-between;
 }
 
 /* seção wishlists */
