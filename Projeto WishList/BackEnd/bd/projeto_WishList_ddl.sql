@@ -11,6 +11,9 @@ CREATE TABLE desejo
 );
 GO
 
+ALTER TABLE desejo
+ADD idUsuario	INT FOREIGN KEY REFERENCES usuario(idUsuario);
+
 CREATE TABLE usuario
 (
 	idUsuario	INT PRIMARY KEY IDENTITY

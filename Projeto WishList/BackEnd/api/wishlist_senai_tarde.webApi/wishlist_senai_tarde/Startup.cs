@@ -43,6 +43,8 @@ namespace wishlist_senai_tarde
 
             app.UseSwagger();
 
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "wishlist_senai_tarde");

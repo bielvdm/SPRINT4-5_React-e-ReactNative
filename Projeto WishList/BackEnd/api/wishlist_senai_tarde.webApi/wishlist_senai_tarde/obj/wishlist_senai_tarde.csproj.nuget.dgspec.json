@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pichau\\source\\repos\\wishlist_senai_tarde\\wishlist_senai_tarde\\wishlist_senai_tarde.csproj": {}
+    "C:\\Users\\Gigio\\Desktop\\SENAI\\Sprint4-REACT\\Projeto WishList\\BackEnd\\api\\wishlist_senai_tarde.webApi\\wishlist_senai_tarde\\wishlist_senai_tarde.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pichau\\source\\repos\\wishlist_senai_tarde\\wishlist_senai_tarde\\wishlist_senai_tarde.csproj": {
+    "C:\\Users\\Gigio\\Desktop\\SENAI\\Sprint4-REACT\\Projeto WishList\\BackEnd\\api\\wishlist_senai_tarde.webApi\\wishlist_senai_tarde\\wishlist_senai_tarde.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pichau\\source\\repos\\wishlist_senai_tarde\\wishlist_senai_tarde\\wishlist_senai_tarde.csproj",
+        "projectUniqueName": "C:\\Users\\Gigio\\Desktop\\SENAI\\Sprint4-REACT\\Projeto WishList\\BackEnd\\api\\wishlist_senai_tarde.webApi\\wishlist_senai_tarde\\wishlist_senai_tarde.csproj",
         "projectName": "wishlist_senai_tarde",
-        "projectPath": "C:\\Users\\Pichau\\source\\repos\\wishlist_senai_tarde\\wishlist_senai_tarde\\wishlist_senai_tarde.csproj",
-        "packagesPath": "C:\\Users\\Pichau\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pichau\\source\\repos\\wishlist_senai_tarde\\wishlist_senai_tarde\\obj\\",
+        "projectPath": "C:\\Users\\Gigio\\Desktop\\SENAI\\Sprint4-REACT\\Projeto WishList\\BackEnd\\api\\wishlist_senai_tarde.webApi\\wishlist_senai_tarde\\wishlist_senai_tarde.csproj",
+        "packagesPath": "C:\\Users\\Gigio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gigio\\Desktop\\SENAI\\Sprint4-REACT\\Projeto WishList\\BackEnd\\api\\wishlist_senai_tarde.webApi\\wishlist_senai_tarde\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Pichau\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gigio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

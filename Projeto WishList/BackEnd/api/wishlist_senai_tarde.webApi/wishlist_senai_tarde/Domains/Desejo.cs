@@ -14,7 +14,9 @@ namespace wishlist_senai_tarde.Domains
 
         public int IdDesejo { get; set; }
         public string Descricao { get; set; }
+        public int? IdUsuario { get; set; }
 
+        public virtual Usuario IdUsuarioNavigation { get; set; }
         public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }
