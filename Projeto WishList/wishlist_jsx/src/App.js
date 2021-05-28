@@ -10,9 +10,12 @@ class wishlist extends Component
     super(props);
     this.state = 
     {
-       descricao  : [],
+       descricaoArray  : [],
        email      : '',
-       senha      : ''
+       email1     : '',
+       senha      : '',
+       idUser     : 1,
+       desejo     : ''
     }
   }
 
@@ -29,9 +32,54 @@ class wishlist extends Component
 
     .then(resposta => resposta.json())
 
-    .then(dados => this.setState({descricao : dados}))
+    .then(dados => this.setState({descricaoArray : dados}))
 
     .catch(erro => console.log(erro))
+  }
+
+  cadastrarDesejo = (event) =>
+  {
+    event.preventDefault();
+
+    fetch('http://localhost:5000/api/Desejo',
+    {
+      method : 'POST',
+
+      body : JSON.stringify({ descricao : this.state.desejo,
+                              idUsuario : this.state.idUser}),
+
+      headers : {
+        "Content-Type" : "application/json"
+    }
+    })
+
+    .then(console.log('Tipo de Evento cadastrado!'))
+
+    .catch(erro => console.log(erro))
+
+    .then(this.listarDesejo)
+  }
+
+  limparCampos = () =>
+  {
+    this.setState(
+      {
+        email      : '',
+        email1     : '',
+        senha      : '',
+        desejo     : ''
+      }
+    )
+  }
+
+  atualiazarDesejo = async (event) =>
+  {
+    await this.setState({ desejo : event.target.value})
+  }
+
+  atualiazarid = async (event) =>
+  {
+    await this.setState({ idUsuario : event.target.value})
   }
 
     render()
@@ -46,10 +94,10 @@ class wishlist extends Component
 
                   <img src={logo} alt="Logo Wish List"/>
 
-                      <div className="content-wishlist dis">
+                    <div className="content-wishlist dis">
 
                         {
-                          this.state.descricao.map( (wish) => {
+                          this.state.descricaoArray.map( (wish) => {
                             return(
 
                           <div className="wishlist dis">
@@ -72,23 +120,22 @@ class wishlist extends Component
 
               <section className="container-inputs coluna">
 
-                      <div className="box coluna spa">
+                      <form onSubmit={this.cadastrarUser} className="box coluna spa">
                           <h1>Usuário</h1>
-                          <input type="email" placeholder="E-mail"/>
-                          <input type="password" placeholder="Senha"/>
+                          <input type="email" value={this.state.email1} onChange={this.atualiazarUser} placeholder="E-mail"/>
+                          <input type="password" value={this.state.senha} onChange={this.atualiazarUser} placeholder="Senha"/>
 
                           <div className="botao dis">
-                              <button type="submit">Cadastrar →</button>
                               <button type="submit">Visualizar →</button>
                           </div>
-                      </div>
+                      </form>
 
-                      <div className="box coluna spa">
+                      <form onSubmit={this.cadastrarDesejo} className="box coluna spa">
                           <h1>Cadastrar novo desejo</h1>
-                          <input type="email" placeholder="E-mail"/>
-                          <input type="password" placeholder="Digite seu desejo"/>
+                          <input type="number" value={this.state.idUser} onChange={this.atualiazarid} placeholder="Id do seu usuário"/>
+                          <input type="text" value={this.state.desejo} onChange={this.atualiazarDesejo} placeholder="Digite seu desejo"/>
                           <button type="submit">→</button>
-                      </div>
+                      </form>
 
               </section>
 

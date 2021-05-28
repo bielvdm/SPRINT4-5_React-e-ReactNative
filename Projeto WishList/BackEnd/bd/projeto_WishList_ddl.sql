@@ -1,4 +1,4 @@
-CREATE DATABASE wishlist_senai_tarde
+sCREATE DATABASE wishlist_senai_tarde
 GO
 
 USE wishlist_senai_tarde
