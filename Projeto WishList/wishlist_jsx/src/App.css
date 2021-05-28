@@ -21,6 +21,8 @@
 
 .dis{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .coluna{
@@ -40,7 +42,6 @@
     width: 290px;
     height: 600px;
     justify-content: space-around;
-    padding-top: 100px;
 }
 
 .box{
@@ -75,7 +76,9 @@
 
 .botao{
     width: 290px;
-    justify-content: space-between;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* seção wishlists */
@@ -100,12 +103,18 @@
 
 .texto-wishlist{
     width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     text-align: justify;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
 .texto-wishlist h4{
+    margin-bottom: 10px;
+}
+.texto-wishlist p{
     margin-bottom: 10px;
 }
 

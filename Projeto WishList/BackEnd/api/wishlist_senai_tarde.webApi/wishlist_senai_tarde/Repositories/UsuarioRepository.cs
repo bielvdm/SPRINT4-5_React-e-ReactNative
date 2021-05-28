@@ -14,6 +14,7 @@ namespace wishlist_senai_tarde.Repositories
         public void Cadastrar(Usuario novoUsuario)
         {
             ctx.Usuarios.Add(novoUsuario);
+            ctx.SaveChanges();
         }
 
         public List<Usuario> ListarTodos()

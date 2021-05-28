@@ -3,6 +3,11 @@ import desejo from './img/trash-alt-solid.svg';
 import logo from './img/LogoWishList.png';
 import './App.css';
 
+function DataFormatada(props)
+{
+  return <h4>Data de criação: {props.date.toLocaleDateString()}</h4>
+}
+
 class wishlist extends Component
 {
   constructor(props)
@@ -10,12 +15,14 @@ class wishlist extends Component
     super(props);
     this.state = 
     {
-       descricaoArray  : [],
-       email      : '',
-       email1     : '',
-       senha      : '',
-       idUser     : 1,
-       desejo     : ''
+       descricaoArray : [],
+       email          : '',
+       senha          : '',
+       idUser         : 0,
+       idUserBuscado  : 0,
+       desejo         : '',
+
+       date : new Date()
     }
   }
 
@@ -53,25 +60,37 @@ class wishlist extends Component
     }
     })
 
-    .then(console.log('Tipo de Evento cadastrado!'))
+    .then(console.log('Desejo cadastrado!'))
 
     .catch(erro => console.log(erro))
 
     .then(this.listarDesejo)
   }
 
-  limparCampos = () =>
+  cadastrarUser = (event) =>
   {
-    this.setState(
-      {
-        email      : '',
-        email1     : '',
-        senha      : '',
-        desejo     : ''
-      }
-    )
-  }
+    event.preventDefault();
 
+    fetch('http://localhost:5000/api/Usuario',
+    {
+      method : 'POST',
+
+      body : JSON.stringify({ email : this.state.email,
+                              senha : this.state.senha }),
+
+      headers : {
+        "Content-Type" : "application/json"
+    }
+
+    
+  })
+      .then(console.log('Usuário cadastrado!'))
+
+      .catch(erro => console.log(erro))
+
+      .then(this.listarDesejo)
+  }
+  
   atualiazarDesejo = async (event) =>
   {
     await this.setState({ desejo : event.target.value})
@@ -79,7 +98,17 @@ class wishlist extends Component
 
   atualiazarid = async (event) =>
   {
-    await this.setState({ idUsuario : event.target.value})
+    await this.setState({ idUser : event.target.value})
+  }
+
+  atualiazarEmail = async (event) =>
+  {
+    await this.setState({ email : event.target.value })
+  }
+
+  atualiazarSenha = async (event) =>
+  {
+    await this.setState({ senha : event.target.value })
   }
 
     render()
@@ -100,14 +129,16 @@ class wishlist extends Component
                           this.state.descricaoArray.map( (wish) => {
                             return(
 
-                          <div className="wishlist dis">
+                          <div key={wish.idDesejo} className="wishlist dis">
                                 <div className="texto-wishlist">
                                   <h4>Desejo número: {wish.idDesejo}</h4>
-                                  <h4>Descrição:</h4>
+                                  <h4>Descrição: </h4>
                                   <p>{wish.descricao}</p>
+                                  <h4>Id do usuário: {wish.idUsuario}</h4>
+                                  <DataFormatada date={this.state.date}/>
                                 </div>
         
-                              <img src={desejo} alt="Botão de exluir (formato de lixo)" onclick="deletar()" />
+                              <img src={desejo} alt="Botão de exluir (formato de lixo)" />
                           </div>
                             )
                           })
@@ -122,11 +153,11 @@ class wishlist extends Component
 
                       <form onSubmit={this.cadastrarUser} className="box coluna spa">
                           <h1>Usuário</h1>
-                          <input type="email" value={this.state.email1} onChange={this.atualiazarUser} placeholder="E-mail"/>
-                          <input type="password" value={this.state.senha} onChange={this.atualiazarUser} placeholder="Senha"/>
+                          <input type="email" value={this.state.email} onChange={this.atualiazarEmail} placeholder="E-mail"/>
+                          <input type="password" value={this.state.senha} onChange={this.atualiazarSenha} placeholder="Senha"/>
 
                           <div className="botao dis">
-                              <button type="submit">Visualizar →</button>
+                              <button type="submit">Cadastrar usuário</button>
                           </div>
                       </form>
 
@@ -136,7 +167,7 @@ class wishlist extends Component
                           <input type="text" value={this.state.desejo} onChange={this.atualiazarDesejo} placeholder="Digite seu desejo"/>
                           <button type="submit">→</button>
                       </form>
-
+                      
               </section>
 
           </section>

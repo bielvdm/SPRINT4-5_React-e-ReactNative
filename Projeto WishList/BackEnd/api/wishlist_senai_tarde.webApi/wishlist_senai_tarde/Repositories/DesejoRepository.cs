@@ -34,6 +34,7 @@ namespace wishlist_senai_tarde.Repositories
         public void Cadastrar(Desejo desejo)
         {
             ctx.Desejos.Add(desejo);
+            ctx.SaveChanges();
         }
 
         public void Deletar(int id)
