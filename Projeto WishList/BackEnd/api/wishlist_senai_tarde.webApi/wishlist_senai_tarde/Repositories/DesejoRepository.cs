@@ -46,9 +46,10 @@ namespace wishlist_senai_tarde.Repositories
             ctx.SaveChanges();
         }
 
-        public List<Desejo> ListarComEmail()
+        public Desejo buscarComEmail(int id)
         {
-            return ctx.Desejos.Include(d => d.Usuarios).ToList();
+            Desejo desejobuscado = ctx.Desejos.FirstOrDefault(x => x.IdUsuarioNavigation.IdUsuario == id);
+            return desejobuscado;
         }
 
         public List<Desejo> ListarTodos()

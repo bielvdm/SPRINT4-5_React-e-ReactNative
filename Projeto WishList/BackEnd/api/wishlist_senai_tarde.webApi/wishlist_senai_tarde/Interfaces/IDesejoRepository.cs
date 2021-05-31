@@ -13,6 +13,6 @@ namespace wishlist_senai_tarde.Interfaces
         void Cadastrar(Desejo desejo);
         void Atualizar(int id, Desejo desejoAtt);
         void Deletar(int id);
-        List<Desejo> ListarComEmail();
+        Desejo buscarComEmail(int id);
     }
 }

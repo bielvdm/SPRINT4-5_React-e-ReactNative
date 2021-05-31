@@ -7521,20 +7521,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gigio\\.nuget\\packages\\": {}
+    "C:\\Users\\adm\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gigio\\Desktop\\SENAI\\Sprint4-REACT\\Projeto WishList\\BackEnd\\api\\wishlist_senai_tarde.webApi\\wishlist_senai_tarde\\wishlist_senai_tarde.csproj",
+      "projectUniqueName": "C:\\Users\\adm\\Desktop\\Sprint4-REACT\\Projeto WishList\\BackEnd\\api\\wishlist_senai_tarde.webApi\\wishlist_senai_tarde\\wishlist_senai_tarde.csproj",
       "projectName": "wishlist_senai_tarde",
-      "projectPath": "C:\\Users\\Gigio\\Desktop\\SENAI\\Sprint4-REACT\\Projeto WishList\\BackEnd\\api\\wishlist_senai_tarde.webApi\\wishlist_senai_tarde\\wishlist_senai_tarde.csproj",
-      "packagesPath": "C:\\Users\\Gigio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gigio\\Desktop\\SENAI\\Sprint4-REACT\\Projeto WishList\\BackEnd\\api\\wishlist_senai_tarde.webApi\\wishlist_senai_tarde\\obj\\",
+      "projectPath": "C:\\Users\\adm\\Desktop\\Sprint4-REACT\\Projeto WishList\\BackEnd\\api\\wishlist_senai_tarde.webApi\\wishlist_senai_tarde\\wishlist_senai_tarde.csproj",
+      "packagesPath": "C:\\Users\\adm\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\adm\\Desktop\\Sprint4-REACT\\Projeto WishList\\BackEnd\\api\\wishlist_senai_tarde.webApi\\wishlist_senai_tarde\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Gigio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\adm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7600,7 +7608,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

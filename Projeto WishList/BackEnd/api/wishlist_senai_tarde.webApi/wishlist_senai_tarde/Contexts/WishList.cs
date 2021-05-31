@@ -25,8 +25,8 @@ namespace wishlist_senai_tarde.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-G7BQL8U\\SQLEXPRESS; initial catalog=wishlist_senai_tarde; user Id=sa; pwd=senai@132");
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Data Source = DESKTOP-SL5KKOH; initial catalog = wishlist_senai_tarde; integrated security = true");
             }
         }
 
@@ -37,7 +37,7 @@ namespace wishlist_senai_tarde.Contexts
             modelBuilder.Entity<Desejo>(entity =>
             {
                 entity.HasKey(e => e.IdDesejo)
-                    .HasName("PK__desejo__5DB1341FD631E3DE");
+                    .HasName("PK__desejo__5DB1341FD623150B");
 
                 entity.ToTable("desejo");
 
@@ -54,17 +54,17 @@ namespace wishlist_senai_tarde.Contexts
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Desejos)
                     .HasForeignKey(d => d.IdUsuario)
-                    .HasConstraintName("FK__desejo__idUsuari__34C8D9D1");
+                    .HasConstraintName("FK__desejo__idUsuari__3D5E1FD2");
             });
 
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__usuario__645723A6466A245F");
+                    .HasName("PK__usuario__645723A60C065C12");
 
                 entity.ToTable("usuario");
 
-                entity.HasIndex(e => e.Email, "UQ__usuario__AB6E61641BEC6BF8")
+                entity.HasIndex(e => e.Email, "UQ__usuario__AB6E61649233BF05")
                     .IsUnique();
 
                 entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
@@ -75,18 +75,11 @@ namespace wishlist_senai_tarde.Contexts
                     .IsUnicode(false)
                     .HasColumnName("email");
 
-                entity.Property(e => e.IdDesejo).HasColumnName("idDesejo");
-
                 entity.Property(e => e.Senha)
                     .IsRequired()
                     .HasMaxLength(255)
                     .IsUnicode(false)
                     .HasColumnName("senha");
-
-                entity.HasOne(d => d.IdDesejoNavigation)
-                    .WithMany(p => p.Usuarios)
-                    .HasForeignKey(d => d.IdDesejo)
-                    .HasConstraintName("FK__usuario__idDesej__276EDEB3");
             });
 
             OnModelCreatingPartial(modelBuilder);

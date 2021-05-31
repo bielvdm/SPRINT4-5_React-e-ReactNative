@@ -35,6 +35,20 @@ namespace wishlist_senai_tarde.Controllers
             }
         }
 
+        [HttpGet("{id}")]
+        public IActionResult buscarEmail(int id)
+        {
+            try
+            {
+                Desejo desejobuscado = _desejoRepository.buscarComEmail(id);
+                return Ok(desejobuscado);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
         [HttpPost]
         public IActionResult Cadastrar(Desejo novoDesejo)
         {
@@ -50,7 +64,7 @@ namespace wishlist_senai_tarde.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpDelete ("{id}")]
         public IActionResult Deletar(int id)
         {
             try

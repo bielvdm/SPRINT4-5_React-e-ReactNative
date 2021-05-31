@@ -21,6 +21,7 @@ class wishlist extends Component
        idUser         : 0,
        idUserBuscado  : 0,
        desejo         : '',
+       idDesejo       : 0,
 
        date : new Date()
     }
@@ -40,6 +41,24 @@ class wishlist extends Component
     .then(resposta => resposta.json())
 
     .then(dados => this.setState({descricaoArray : dados}))
+
+    .catch(erro => console.log(erro))
+  }
+
+  buscarIdDesejo = (desejo) => {
+    this.setState({
+        
+        idDesejo       : desejo.idDesejo,
+        descricaoArray : desejo.descricao
+    });
+};
+
+  deletarDesejo = (desejo) => {
+
+    fetch('http://localhost:5000/api/Desejo/'+ desejo.idDesejo, {
+      
+      method : 'DELETE'
+    })
 
     .catch(erro => console.log(erro))
   }
@@ -81,8 +100,6 @@ class wishlist extends Component
       headers : {
         "Content-Type" : "application/json"
     }
-
-    
   })
       .then(console.log('Usuário cadastrado!'))
 
@@ -90,6 +107,16 @@ class wishlist extends Component
 
       .then(this.listarDesejo)
   }
+
+  // buscarDesejosUser = (usuario) => {
+  //   fetch('http://localhost:5000/api/Desejo/'+ usuario.idUsuario)
+
+  //   .then(resposta => resposta.json())
+
+  //   .then(dados => this.setState({descricaoArray : dados}))
+
+  //   .catch(erro => console.log(erro))
+  // }
   
   atualiazarDesejo = async (event) =>
   {
@@ -138,7 +165,7 @@ class wishlist extends Component
                                   <DataFormatada date={this.state.date}/>
                                 </div>
         
-                              <img src={desejo} alt="Botão de exluir (formato de lixo)" />
+                              <img src={desejo} alt="Botão de exluir (formato de lixo)" onClick={ () => this.deletarDesejo(wish)} />
                           </div>
                             )
                           })
@@ -151,15 +178,25 @@ class wishlist extends Component
 
               <section className="container-inputs coluna">
 
-                      <form onSubmit={this.cadastrarUser} className="box coluna spa">
-                          <h1>Usuário</h1>
+                      <form className="box coluna spa">
+                          <h1>Cadastrar Usuário</h1>
                           <input type="email" value={this.state.email} onChange={this.atualiazarEmail} placeholder="E-mail"/>
                           <input type="password" value={this.state.senha} onChange={this.atualiazarSenha} placeholder="Senha"/>
 
                           <div className="botao dis">
-                              <button type="submit">Cadastrar usuário</button>
+                              <button onClick={this.cadastrarUser} type="submit">Cadastrar</button>
                           </div>
                       </form>
+
+                      {/* <div className="box coluna spa">
+                          <h1>Listar Desejos</h1>
+                          <input type="number" value={this.state.idUser} onChange={this.atualiazarid} placeholder="Id do Usuário"/>
+                          <input type="password" value={this.state.senha} onChange={this.atualiazarSenha} placeholder="Senha"/>
+
+                          <div className="botao dis">
+                              <button onClick={this.buscarDesejosUser} type="submit">Visualizar</button>
+                          </div>
+                      </div> */}
 
                       <form onSubmit={this.cadastrarDesejo} className="box coluna spa">
                           <h1>Cadastrar novo desejo</h1>
