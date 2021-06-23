@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "06bbad6c-1349-42e3-be93-4054fd8a7f67",
+		"name": "Projeto_Roman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista_Projetos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/projetos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"projetos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastra_Projeto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"nome\": \"Projeto_Roman\",\r\n        \"descricao\": \"Projeto que simula um sistema de atividades\",\r\n        \"idTema\": 3,\r\n        \"idTemaNavigation\": null\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/projetos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"projetos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

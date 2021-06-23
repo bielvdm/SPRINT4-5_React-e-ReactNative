@@ -21,6 +21,8 @@ namespace Projeto_Roman.Controllers
             _usuario = new UsuarioRepository();
         }
 
+//-----------------------------------------------------------------
+
 [HttpGet]
 
         //CHAMA O METODO DE LISTAR
@@ -29,5 +31,7 @@ namespace Projeto_Roman.Controllers
             //RETORNA A LISTA DE CONSULTAS
             return Ok(_usuario.Listar());
         }
+
+//-----------------------------------------------------------------
     }
 }

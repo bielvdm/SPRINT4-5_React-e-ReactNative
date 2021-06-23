@@ -21,6 +21,8 @@ namespace Projeto_Roman.Controllers
             _projeto = new ProjetoRepository();
         }
 
+//-----------------------------------------------------------------
+
 [HttpGet]
 
         //CHAMA O METODO DE LISTAR
@@ -29,6 +31,8 @@ namespace Projeto_Roman.Controllers
             //RETORNA A LISTA DE CONSULTAS
             return Ok(_projeto.Listar());
         }
+
+//-----------------------------------------------------------------
 
 [HttpPost]
         public IActionResult CadastraConsulta(Projeto novoProjeto)
