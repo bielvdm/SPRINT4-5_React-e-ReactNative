@@ -1,21 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\guilh\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\Projeto_Roman.csproj": {}
+    "C:\\Users\\adm\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\Projeto_Roman.csproj": {}
   },
   "projects": {
-    "C:\\Users\\guilh\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\Projeto_Roman.csproj": {
+    "C:\\Users\\adm\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\Projeto_Roman.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\guilh\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\Projeto_Roman.csproj",
+        "projectUniqueName": "C:\\Users\\adm\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\Projeto_Roman.csproj",
         "projectName": "Projeto_Roman",
-        "projectPath": "C:\\Users\\guilh\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\Projeto_Roman.csproj",
-        "packagesPath": "C:\\Users\\guilh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\guilh\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\obj\\",
+        "projectPath": "C:\\Users\\adm\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\Projeto_Roman.csproj",
+        "packagesPath": "C:\\Users\\adm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adm\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\guilh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\adm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -70,6 +76,14 @@
               "target": "Package",
               "version": "[6.11.1, )"
             },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[6.1.4, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[6.1.4, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.2, )"
@@ -101,7 +115,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

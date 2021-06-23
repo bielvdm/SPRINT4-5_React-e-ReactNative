@@ -12,5 +12,13 @@ namespace Projeto_Roman.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
+        try
+        {
+            
+        }
+        catch (ex)
+        {
+             // TODO
+        }
     }
 }
