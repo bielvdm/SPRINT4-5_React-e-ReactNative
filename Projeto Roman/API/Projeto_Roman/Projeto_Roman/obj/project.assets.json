@@ -7813,28 +7813,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\adm\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\40228034876\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\adm\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\Projeto_Roman.csproj",
+      "projectUniqueName": "C:\\Users\\40228034876\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\Projeto_Roman.csproj",
       "projectName": "Projeto_Roman",
-      "projectPath": "C:\\Users\\adm\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\Projeto_Roman.csproj",
-      "packagesPath": "C:\\Users\\adm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\adm\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\obj\\",
+      "projectPath": "C:\\Users\\40228034876\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\Projeto_Roman.csproj",
+      "packagesPath": "C:\\Users\\40228034876\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\40228034876\\Desktop\\SPRINT4-5_React-e-ReactNative\\Projeto Roman\\API\\Projeto_Roman\\Projeto_Roman\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\adm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\40228034876\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7928,7 +7920,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
