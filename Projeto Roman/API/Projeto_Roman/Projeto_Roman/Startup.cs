@@ -26,7 +26,7 @@ namespace Projeto_Roman
                     {
                         //Ignora os loopings nas consultas
                         options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-                        //Ignora os valores nulos ao fazer junções nas consultas
+                        //Ignora os valores nulos ao fazer junï¿½ï¿½es nas consultas
                         options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
                     });
             
@@ -37,6 +37,16 @@ namespace Projeto_Roman
                     Title = "Roman API",
                     Version = "v1"
                 });
+            });
+
+            services.AddCors(options => {
+                options.AddPolicy("CorsPolicy", 
+                    builder => {
+                        builder.WithOrigins("http://localhost:3000", "http://localhost:19006")
+                                                                    .AllowAnyHeader()
+                                                                    .AllowAnyMethod();
+                    }
+                );
             });
 
             services
@@ -50,22 +60,22 @@ namespace Projeto_Roman
                 {
                     x.TokenValidationParameters = new TokenValidationParameters
                     {
-                        //Define que o issuer será validado
+                        //Define que o issuer serï¿½ validado
                         ValidateIssuer = true,
 
-                        //Define que o audience será validado
+                        //Define que o audience serï¿½ validado
                         ValidateAudience = true,
 
-                        //Define que o tempo de vida será validado
+                        //Define que o tempo de vida serï¿½ validado
                         ValidateLifetime = true,
 
-                        //Forma de criptografia e a chave de autenticação
+                        //Forma de criptografia e a chave de autenticaï¿½ï¿½o
                         IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("projeto-roman-autenticacao")),
 
-                        //Verifica o tempo de expiração do token
+                        //Verifica o tempo de expiraï¿½ï¿½o do token
                         ClockSkew = TimeSpan.FromMinutes(60),
 
-                        //Define de onde está vindo (NOME ISSUER)
+                        //Define de onde estï¿½ vindo (NOME ISSUER)
                         ValidIssuer = "projetoRoman.webApi",
 
                         //Define para onde vai (NOME AUDIENCE)
@@ -84,12 +94,14 @@ namespace Projeto_Roman
 
             app.UseRouting();
 
-            //Habilita a autenticação
+            //Habilita a autenticaï¿½ï¿½o
             app.UseAuthentication();
 
-            //Habilita a autorização
+            //Habilita a autorizaï¿½ï¿½o
             app.UseAuthorization();
 
+            app.UseCors("CorsPolicy");
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

@@ -128,3 +128,8 @@ C:\Users\guilh\Desktop\SPRINT4-5_React-e-ReactNative\Projeto Roman\API\Projeto_R
 C:\Users\guilh\Desktop\SPRINT4-5_React-e-ReactNative\Projeto Roman\API\Projeto_Roman\Projeto_Roman\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
 C:\Users\guilh\Desktop\SPRINT4-5_React-e-ReactNative\Projeto Roman\API\Projeto_Roman\Projeto_Roman\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\guilh\Desktop\SPRINT4-5_React-e-ReactNative\Projeto Roman\API\Projeto_Roman\Projeto_Roman\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\guilh\Desktop\SPRINT4-5_React-e-ReactNative\Projeto Roman\API\Projeto_Roman\Projeto_Roman\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\guilh\Desktop\SPRINT4-5_React-e-ReactNative\Projeto Roman\API\Projeto_Roman\Projeto_Roman\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\guilh\Desktop\SPRINT4-5_React-e-ReactNative\Projeto Roman\API\Projeto_Roman\Projeto_Roman\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\guilh\Desktop\SPRINT4-5_React-e-ReactNative\Projeto Roman\API\Projeto_Roman\Projeto_Roman\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\guilh\Desktop\SPRINT4-5_React-e-ReactNative\Projeto Roman\API\Projeto_Roman\Projeto_Roman\obj\Debug\net5.0\Projeto_Roman.MvcApplicationPartsAssemblyInfo.cs
