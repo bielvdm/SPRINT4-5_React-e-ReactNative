@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import api from '../Services/api'
-import {Text, Image, View, FlatList, ImageBackground, StyleSheet} from 'react-native'
+import {Text, Image, View, FlatList, ImageBackground, StyleSheet, TouchableOpacity} from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { color } from 'react-native-reanimated';
 
 
 export default class Projetos extends Component{
@@ -25,6 +27,20 @@ export default class Projetos extends Component{
 
     }
 
+
+    Logout = async() => {
+        try{
+            await AsyncStorage.removeItem('userToken');
+            this.props.navigation.navigate('Login');
+        }catch(erro){
+            console.warn(erro)
+        }
+    };
+
+
+
+
+
     componentDidMount(){
         this.ListarProjeto();
     }
@@ -32,7 +48,12 @@ export default class Projetos extends Component{
     render(){
         return(
             <View style={Styles.container}>
+                <View style={Styles.Header} >
                 <Image source = {require('../../assets/img/logo.png')} style = {Styles.logo}/>
+                <TouchableOpacity onPress={this.Logout}>
+                    <Image source={require('../../assets/img/sign-out-alt-solid.svg')} style = {Styles.Logout} />
+                </TouchableOpacity>
+                </View>
                 <Text style = {Styles.tituloPag}>projetos cadastrados</Text>
                 <FlatList 
                 data={this.state.ListaProjeto}
@@ -61,6 +82,7 @@ export default class Projetos extends Component{
                 <Text numberOfLines={2} style={Styles.listaTextDesc}>{item.descricao}</Text>
             </View>
 
+
         </ImageBackground>
     )
 }
@@ -83,7 +105,8 @@ const Styles = StyleSheet.create({
 
       logo : {
           width: 265,
-          height : 165
+          height : 165,
+          marginLeft : 20
       },
 
       tituloPag : {
@@ -138,6 +161,14 @@ const Styles = StyleSheet.create({
           height : 18,
           tintColor: '#fff',
           marginRight : 10
+      },
+      Logout : {
+          width : 20,
+          height : 20,
+          tintColor : '#fff',
+          marginTop : 45,          
+      },
+      Header : {
+          flexDirection : 'row',
       }
-
 })

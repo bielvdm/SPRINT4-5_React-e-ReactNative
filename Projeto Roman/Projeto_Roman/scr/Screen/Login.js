@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {ImageBackground, StyleSheet, TextInput, TouchableOpacity, View, Text} from 'react-native';
+import api from '../Services/api';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default class Login extends Component{
@@ -9,6 +11,23 @@ export default class Login extends Component{
       email : '',
       senha : ''
     }
+  }
+
+  Login = async() => {
+    try {
+      const resposta = await api.post('/Login', {
+        email : this.state.email,
+        senha : this.state.senha,
+      });
+
+      this.setState({email : '', senha : ''})
+      
+      await AsyncStorage.setItem('userToken', resposta.data.token);
+      this.props.navigation.navigate('Main');
+    }catch(error) {
+      console.warn(error)
+    }
+  
   }
 
   render(){
@@ -21,6 +40,7 @@ export default class Login extends Component{
               keyboardType = 'email-address'
               style={styles.inputCadastro}
               onChangeText={email => this.setState({ email })}
+              value = {this.state.email}
             />
 
             <TextInput
@@ -28,12 +48,13 @@ export default class Login extends Component{
               placeholderTextColor = '#fff'
               secureTextEntry = {true}
               style={styles.inputCadastro}
-              onChangeText={email => this.setState({ email })}
+              onChangeText={senha => this.setState({ senha })}
+              value = {this.state.senha}
             />
 
             <TouchableOpacity 
               style={styles.btnLogin} 
-              //onPress = {}
+              onPress = {this.Login}
             >
               <Text style = {styles.btnText}>Logar</Text>
             </TouchableOpacity>

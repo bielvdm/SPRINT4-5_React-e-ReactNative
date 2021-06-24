@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import api from '../Services/api'
 import {Text, Image, View, FlatList, ImageBackground, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
+import RNPickerSelect from 'react-native-picker-select';
+import { color } from 'react-native-reanimated';
 
 export default class Cadastro extends Component{
     constructor(props){
@@ -22,6 +24,7 @@ Cadastrar = async() => {
         descricao : this.state.Descricao
     }, 
         {headers : { 'Authorization' : 'Bearer ' }})
+        this.setState({IdTema : '', Titulo : '', Descricao : ''})
     }
     catch (erro){
         console.warn(erro)
@@ -35,18 +38,38 @@ render(){
             <View style={Styles.container}>
                 <Image source = {require('../../assets/img/logo.png')} style = {Styles.logo}/>
                 <Text style={Styles.tituloPag}>novo projeto</Text>
-                <TextInput 
+
+            <View style={Styles.SelectCadastro}>
+                <RNPickerSelect
+                    onValueChange={(value) => this.setState({IdTema : value})}
+                    items={[
+                            { label: 'HQs', value: '1'},
+                            { label: 'Gestão', value: '2' },
+                            { label: 'Banco de Dados', value: '3' },
+                            { label: 'BackEnd', value: '4' },
+                            { label: 'FrontEnd', value: '5' },
+                    ]}
+                    useNativeAndroidPickerStyle={false}
+                    placeholder={{
+                        label: 'Escolha o tema...',
+                        value: null,
+                    }}
+                    />
+            </View>
+                {/* <TextInput 
                     style={Styles.inputCadastro}
                     placeholder="IdTema"
                     placeholderTextColor="#FFF"
                     onChangeText={IdTema => this.setState({ IdTema })}
-                />
+                    value = {this.state.IdTema}
+                /> */}
 
                 <TextInput 
                     style={Styles.inputCadastro}
                     placeholder="Nome"
                     placeholderTextColor="#FFF"
                     onChangeText={Titulo => this.setState({ Titulo })}
+                    value = {this.state.Titulo}
                 />
 
                 <TextInput 
@@ -56,6 +79,7 @@ render(){
                     placeholder="Descrição"
                     placeholderTextColor="#FFF"
                     onChangeText={Descricao => this.setState({ Descricao })}
+                    value = {this.state.Descricao}
                 />
 
                 <TouchableOpacity
@@ -88,7 +112,10 @@ const Styles = StyleSheet.create({
         width: 265,
         height : 165
     },
+
+    
     inputCadastro : {
+
         width: 260,
         height: 40, 
         backgroundColor: '#7C8FA6',
@@ -101,6 +128,19 @@ const Styles = StyleSheet.create({
         },
         shadowOpacity: 0.5
     },
+
+    SelectCadastro : {
+        width: 260,
+        backgroundColor: '#7C8FA6',
+        marginBottom: 20,
+        borderRadius : 4,
+        shadowColor :'#000',
+        shadowOffset : {
+            width: 3, height: 3
+        },
+        shadowOpacity: 0.5
+    },
+
     inputCadastroDesc : {
         width: 260,
         height: 80, 
@@ -133,4 +173,7 @@ const Styles = StyleSheet.create({
         },
         shadowOpacity: 0.3,
     }
+
 }) 
+
+  

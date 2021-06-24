@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Projetos from './Projetos.js';
@@ -46,5 +46,5 @@ const styles = StyleSheet.create({
         width: 23,
         height: 23,
         tintColor: '#fff'
-    }
+    },
 })
